@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>eShop</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="js-2(lesson1).css" type="text/css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h3>Goods list</h3>
+            <input type="text" class="goods-search" v-model="searchLine"/>
+            <button class="search-button" type="button" v-on:click="filterGoods">Искать</button>
+            <a href="js-2(cart).html" class="link" type="button">Корзина</a>
+        </header>
+        <main>
+            <div class="goods-list">
+                <div class="goods-item" v-for="good in filteredGoods">
+                    <h3>{{ good.product_name }}</h3>
+                    <p>{{ good.price }}</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="js-2(lesson5).js"></script>
+</body>
+</html>
